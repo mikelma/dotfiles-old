@@ -1,0 +1,310 @@
+[colors]
+; Dracula coloscheme
+background = #282a36
+background-alt = #44475a
+foreground = #f8f8f2
+foreground-alt = #6272a4
+primary = #ff79c6
+secondary = #e60053
+alert = #bd2c40
+
+[bar/mike]
+width = 100%
+height = 25
+radius = 0.0
+;radius = 6.0
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+; Align modules fixed to middle
+fixed-center = true
+
+font-0 = fixed:pixelsize=10;1
+font-1 = UbuntuCondensed Nerd Font Mono:style=Regular 
+;sont-1 = Roboto Slab:style=Regular:size=10;
+;font-2 = FontAwesome:style=Regular:size=11;
+font-2 = Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular 
+
+modules-left = i3
+modules-center = date username 
+modules-right = laptop nupdates soinua argia battery temperature filesystem cpu
+; modules-right = soinua argia battery temperature filesystem cpu wifi-wicd lock logout poweroff
+
+tray-position = right
+tray-padding = 2
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+
+label-mounted = %{F#ffb86c}  %free%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+format-prefix = " "
+format-prefix-foreground = #ffb86c 
+label = %gb_free%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = #bd93f9 
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix-foreground = #ffb86c 
+format-prefix = " "
+label = %gb_free%
+
+[module/wlan]
+type = internal/network
+interface = wlp0s20f3 
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/eth]
+type = internal/network
+interface = enp7s0 
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+date = %Y-%m-%d%
+time = %H:%M
+content-foreground = #ff79c6 
+label =    %date%     %time%
+
+; [module/pulseaudio]
+; type = internal/pulseaudio
+; 
+; sink = alsa_output.pci-0000_00_1f.3.analog-stereo 
+; format-volume = <label-volume> <bar-volume>
+; label-volume = VOL %percentage%%
+; label-volume-foreground = ${root.foreground}
+; 
+; label-muted = 🔇 muted
+; label-muted-foreground = #666
+; 
+; bar-volume-width = 10
+; bar-volume-foreground-0 = #55aa55
+; bar-volume-foreground-1 = #55aa55
+; bar-volume-foreground-2 = #55aa55
+; bar-volume-foreground-3 = #55aa55
+; bar-volume-foreground-4 = #55aa55
+; bar-volume-foreground-5 = #f5a70a
+; bar-volume-foreground-6 = #ff5555
+; bar-volume-gradient = false
+; bar-volume-indicator = |
+; bar-volume-indicator-font = 2
+; bar-volume-fill = ─
+; bar-volume-fill-font = 2
+; bar-volume-empty = ─
+; bar-volume-empty-font = 2
+; bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP0
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+
+format-discharging = <animation-discharging> <label-discharging>
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 =  
+animation-discharging-2 =  
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = #ff5555
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[module/lock]
+type = custom/text
+content            = 
+content-foreground = #50fa7b 
+content-padding    = 2
+click-left = i3lock-fancy 
+
+[module/logout]
+type = custom/text
+content            = 
+content-foreground = #f1fa8c 
+content-padding    = 2
+click-left = i3-msg exit
+
+[module/poweroff]
+type = custom/text
+content            = 
+content-foreground = #ff5555 
+content-padding    = 2
+click-left = poweroff
+
+[module/weather]
+type = custom/script
+exec = curl -s https://wttr.in/donostia\?format\=1 
+interval = 120
+label         = %output%
+label-padding = 3
+
+[module/wifi-wicd]
+type = custom/text
+content            =  
+content-foreground = #5578DA 
+content-padding    = 2
+click-left = wicd-gtk 
+
+[module/username]
+type = custom/script
+exec = whoami 
+interval = 120
+label         =  %output%
+label-padding = 3
+
+[module/argia]
+type = custom/script
+exec = argia info 
+format-prefix =  
+format-prefix-foreground = #f1fa8c 
+label         = %output%%
+label-padding = 1
+
+[module/soinua]
+type = custom/script
+exec = pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+format-prefix =  
+format-prefix-foreground = #ff79c6 
+label         = %output%%
+label-padding = 1
+
+[module/nupdates]
+type = custom/script
+exec = python3 $HOME/.config/polybar/nupdates.py  
+format-prefix-foreground = #8be9fd 
+format-prefix = :
+label         = %output%
+label-padding = 1
+interval = 120
+
+[module/laptop]
+type = custom/script
+exec = python3 $HOME/.config/polybar/laptop_mode.py  
+format-prefix-foreground = #50fa7b 
+format-prefix = : 
+label         = %output%
+label-padding = 1
+interval = 10

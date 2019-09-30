@@ -1,0 +1,99 @@
+set nocompatible              " equired 
+filetype plugin indent on    " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'dracula/vim'
+Plugin 'tpope/vim-fugitive' " Git wrapper
+Plugin 'scrooloose/nerdtree' " NerdTree, ctrl-n to toggle
+Plugin 'tpope/vim-surround' " Quoting/parenthesizing made simple
+Plugin 'vim-airline/vim-airline'
+Plugin 'luochen1990/rainbow'
+Plugin 'valloric/youcompleteme'
+Plugin 'majutsushi/tagbar'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'Yggdroot/indentLine'
+" Plugin 'vim-nerdtree-direnter'
+" Plugin 'rust-lang/rust.vim'
+
+call vundle#end()            " required
+"""""""""""""""""""""""""
+
+set encoding=utf-8
+
+syntax on " Make code look good
+
+" Enable dracula
+color dracula
+" color darkscene
+
+"Ctr-D to switch from vim to terminal and from terminal to vim
+noremap <C-d> :sh<cr>
+
+set nu " Turn on line numbers
+
+" Set indentation (Tab space) lenght, comment line for default
+set softtabstop=4 shiftwidth=4 expandtab 
+
+" Enable using the mouse
+" set mouse=a
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" NERDTree
+" always open in other tab
+" let NERDTreeMapOpenInTab='<ENTER>'
+" let NERDTreeMapOpenInTab='\r'
+" ctrl-n to toggle nerdtree
+map <C-n> :NERDTreeToggle<CR>  
+
+" Rainbow
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
+" TagBar, show code functions and variables, really nice
+nmap <F8> :TagbarToggle<CR>
+
+" Move through tabs with ctrl-l and ctrl-h 
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+" Enable airline top buffers bar
+let g:airline#extensions#tabline#enabled = 1
+
+" In insert mode, change cursor
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" optional reset cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
