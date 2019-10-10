@@ -34,3 +34,5 @@ rsync -a --delete -P ~/.oh-my-zsh/themes/mikel.zsh-theme zsh/oh-my-zsh
 # Wallpaper
 rsync -a --delete -P ~/.wallpaper wallpaper
 
+# Redshift
+rsync -a --delete -P ~/.config/redshift
