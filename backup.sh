@@ -4,7 +4,7 @@
 rsync -a --delete -P ~/.vimrc vim/vimrc
 
 # i3wm 
-rsync -a --delete -P ~/.config/i3 .
+rsync -a --delete -P ~/.config/i3/config i3/
 
 # Conky
 rsync -a --delete -P ~/.conky/* conky/
@@ -22,7 +22,7 @@ rsync -a --delete -P ~/.config/dunst .
 rsync -a --delete -P ~/.config/rofi .
 
 # Xfce4 terminal
-rsync -a --delete -P ~/.config/xfce4/terminal xfce4/
+rsync -a --delete -P ~/.config/xfce4/terminal/terminalrc xfce4/terminal
 
 # GTK 3
 rsync -a --delete -P ~/.config/gtk-3.0 .
