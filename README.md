@@ -3,4 +3,4 @@ My configurations and dotfiles
 
 ## Screenshoot
 Inline-style: 
-![alt text](https://github.com/mikelma/dotfiles/tree/master/dracula_ricing.png)
+![alt text](https://raw.githubusercontent.com/mikelma/dotfiles/master/dracula_ricing.png)
