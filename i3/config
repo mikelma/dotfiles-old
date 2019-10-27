@@ -138,7 +138,7 @@ exec --no-startup-id feh --bg-scale /home/mike/.wallpaper/this*
 exec --no-startup-id /home/mike/.config/polybar/launch.sh 
 exec --no-startup-id compton -b
 exec --no-startup-id .conky/conky-startup.sh
-exec --no-startup-id xss-lock -- i3lock-fancy -p 
+exec --no-startup-id xss-lock -- i3lock-fancy-rapid 5 3 
 exec --no-startup-id redshift-gtk 
 
 # reload the configuration file
@@ -205,7 +205,8 @@ bindsym $mod+x mode "$mode_display"
 # exit i3 (logs you out of your X session)
 set $System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$System" {
-    bindsym l exec --no-startup-id i3lock-fancy -p, mode "default"
+    # bindsym l exec --no-startup-id i3lock-fancy -p, mode "default"
+    bindsym l exec --no-startup-id i3lock-fancy-rapid 5 3, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
