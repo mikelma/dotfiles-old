@@ -9,7 +9,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tmhedberg/SimpylFold'
+" Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'dracula/vim'
 Plugin 'tpope/vim-fugitive' " Git wrapper
@@ -47,10 +47,10 @@ set softtabstop=4 shiftwidth=4 expandtab
 " set mouse=a
 
 " Enable folding
-set foldmethod=indent
-set foldlevel=99
+" set foldmethod=indent
+" set foldlevel=99
 " Enable folding with the spacebar
-nnoremap <space> za
+" nnoremap <space> za
 
 " NERDTree
 " always open in other tab
@@ -63,7 +63,7 @@ map <C-n> :NERDTreeToggle<CR>
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 " TagBar, show code functions and variables, really nice
-nmap <F8> :TagbarToggle<CR>
+nmap <C-T> :TagbarToggle<CR>
 
 " Move through tabs with ctrl-l and ctrl-h 
 nnoremap <C-h> :tabprevious<CR>
@@ -78,9 +78,11 @@ endif
 
 " unicode symbols
 " airline symbols
-let g:airline_left_sep = ''
+"let g:airline_left_sep = ''
+let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
+"let g:airline_right_sep = ''
+let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
@@ -97,3 +99,8 @@ augroup myCmds
 au!
 autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
+
+" YouCompleteMe settings
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_warning_symbol = ''
+let g:ycm_error_symbol = ''

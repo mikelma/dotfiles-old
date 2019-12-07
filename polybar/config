@@ -1,7 +1,7 @@
 [colors]
 ; Dracula coloscheme
-background = #282a36
-background-alt = #44475a
+background = #aa282a36
+background-alt = #aa44475a
 foreground = #f8f8f2
 foreground-alt = #6272a4
 primary = #ff79c6
