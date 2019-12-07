@@ -36,3 +36,6 @@ rsync -a --delete -P ~/.wallpaper wallpaper
 
 # Redshift
 rsync -a --delete -P ~/.config/redshift
+
+# Alacritty
+rsync -a --delete -P ~/.config/alacritty alacritty/
