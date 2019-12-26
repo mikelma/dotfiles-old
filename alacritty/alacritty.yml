@@ -106,15 +106,7 @@ font:
     #
     # Default:
     #   - (macOS) Menlo
-    #   - (Linux) monospace
-    #   - (Windows) Consolas
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
-
-  # Bold font face
-  #bold:
+    #   - (Linux) monospace - (Windows) Consolas family: monospace The `style` can be specified to pick a specific face.  style: Regular Bold font face bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
@@ -170,34 +162,73 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Dracula)
-colors:
-  # Default colors
+# -------- COLORS -------- #
+challenger_deep: &challenger_deep
+  cursor:
+    text: '0x100e23'
+    cursor: '0x62d196'
   primary:
-    background: '0x282a36'
-    foreground: '0xf8f8f2'
+    background: '0x1b182c'
+    foreground: '0xcbe3e7'
 
-  # Normal colors
-  normal:
-    black:   '0x000000'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0xcaa9fa'
-    magenta: '0xff79c6'
-    cyan:    '0x8be9fd'
-    white:   '0xbfbfbf'
+# Colors (Dracula)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x282a36'
+#     foreground: '0xf8f8f2'
+# 
+#   # Normal colors
+#   normal:
+#     black:   '0x000000'
+#     red:     '0xff5555'
+#     green:   '0x50fa7b'
+#     yellow:  '0xf1fa8c'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff79c6'
+#     cyan:    '0x8be9fd'
+#     white:   '0xbfbfbf'
+# 
+#   # Bright colors
+#   bright:
+#     black:   '0x575b70'
+#     red:     '0xff6e67'
+#     green:   '0x5af78e'
+#     yellow:  '0xf4f99d'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff92d0'
+#     cyan:    '0x9aedfe'
+#     white:   '0xe6e6e6'
 
-  # Bright colors
-  bright:
-    black:   '0x575b70'
-    red:     '0xff6e67'
-    green:   '0x5af78e'
-    yellow:  '0xf4f99d'
-    blue:    '0xcaa9fa'
-    magenta: '0xff92d0'
-    cyan:    '0x9aedfe'
-    white:   '0xe6e6e6'
+dracula: &dracula
+   primary:
+     background: '0x282a36'
+     foreground: '0xf8f8f2'
+ 
+   # Normal colors
+   normal:
+     black:   '0x000000'
+     red:     '0xff5555'
+     green:   '0x50fa7b'
+     yellow:  '0xf1fa8c'
+     blue:    '0xcaa9fa'
+     magenta: '0xff79c6'
+     cyan:    '0x8be9fd'
+     white:   '0xbfbfbf'
+ 
+   # Bright colors
+   bright:
+     black:   '0x575b70'
+     red:     '0xff6e67'
+     green:   '0x5af78e'
+     yellow:  '0xf4f99d'
+     blue:    '0xcaa9fa'
+     magenta: '0xff92d0'
+     cyan:    '0x9aedfe'
+     white:   '0xe6e6e6'
+
+# colors: *challenger_deep
+colors: *dracula
 
 # Visual Bell
 #

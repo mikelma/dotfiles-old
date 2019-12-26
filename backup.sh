@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Vimm files
-rsync -a --delete -P ~/.vimrc vim/vimrc
+# Vim files
+rsync -a --delete -P ~/.vimrc vim/vimrc 
+
+# Neovim files
+rsync -a --delete --exclude=plugged -P ~/.config/nvim .
 
 # i3wm 
 rsync -a --delete -P ~/.config/i3/config i3/
@@ -38,4 +41,4 @@ rsync -a --delete -P ~/.wallpaper wallpaper
 rsync -a --delete -P ~/.config/redshift
 
 # Alacritty
-rsync -a --delete -P ~/.config/alacritty alacritty/
+rsync -a --delete -P ~/.config/alacritty . 

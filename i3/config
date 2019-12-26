@@ -12,8 +12,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec xfce4-terminal
+# bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -193,8 +193,8 @@ bindsym $mod+r mode "resize"
 ## Set the shortcuts and what they do
 set $mode_display Ext Screen (v) VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF
 mode "$mode_display" {
-    bindsym v exec --no-startup-id xrandr --output VGA1 --auto --right-of LVDS1, mode "default"
-    bindsym h exec --no-startup-id xrandr --output HDMI-1 --auto --right-of LVDS1, mode "default"
+    bindsym v exec --no-startup-id xrandr --output VGA1 --auto --left-of eDP-1, mode "default"
+    bindsym h exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1, mode "default"
     bindsym x exec --no-startup-id xrandr --output VGA1 --auto --off, mode "default"
     bindsym y exec --no-startup-id xrandr --output HDMI-1 --auto --off, mode "default"
 

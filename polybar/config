@@ -16,6 +16,8 @@ radius = 0.0
 background = ${colors.background}
 foreground = ${colors.foreground}
 
+monitor = ${env:MONITOR:}
+
 line-size = 3
 line-color = #f00
 
