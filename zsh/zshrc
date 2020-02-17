@@ -101,6 +101,9 @@ source $ZSH/oh-my-zsh.sh
 alias python='python3'
 alias pip='pip3'
 
+# https://github.com/dalance/procs
+alias ps='procs'
+
 # exec n for neovim
 alias n='nvim'
 

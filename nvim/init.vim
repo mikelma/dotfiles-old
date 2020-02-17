@@ -56,6 +56,8 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme dracula
 
+" set nu rnu
+
 " Load staus-line 
 runtime! status-line.vim
 
@@ -76,7 +78,7 @@ nnoremap <C-h> :tabprevious<CR>
 nnoremap <C-l> :tabnext<CR>
 
 "Ctr-D to open terminal in a tab in insert mode
-noremap <C-d> :tabe term://zsh<CR>:startinsert<CR>
+noremap <C-d> :tabe term://fish<CR>:startinsert<CR>
 " Esc to exit
 " tnoremap <Esc> <C-\><C-n>:exit<Enter> 
 tnoremap <Esc> <C-\><C-n>

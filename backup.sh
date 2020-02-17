@@ -35,10 +35,14 @@ rsync -a --delete -P ~/.zshrc zsh/zshrc
 rsync -a --delete -P ~/.oh-my-zsh/themes/mikel.zsh-theme zsh/oh-my-zsh
 
 # Wallpaper
-rsync -a --delete -P ~/.wallpaper wallpaper
+# rsync -a --delete -P ~/.wallpaper wallpaper
 
 # Redshift
 rsync -a --delete -P ~/.config/redshift
 
 # Alacritty
 rsync -a --delete -P ~/.config/alacritty . 
+
+# Fish
+rsync -a --delete -P ~/.config/fish/config.fish fish/.
+rsync -a --delete -P ~/.config/fish/fish_variables fish/.

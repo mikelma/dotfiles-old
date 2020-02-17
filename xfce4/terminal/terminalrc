@@ -33,6 +33,6 @@ ColorForeground=#94A3A5
 ColorBackground=#282a36
 ColorCursorUseDefault=FALSE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0.800000
+BackgroundDarkness=0.860000
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 

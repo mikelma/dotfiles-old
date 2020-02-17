@@ -5,7 +5,7 @@
     bounce_freq = 0
     browser = /usr/bin/firefox -new-tab
     dmenu = /usr/bin/dmenu -p dunst:
-    follow = none
+    follow = mouse
     font = Terminus (TTF) 12
     format = "<b>%s</b>\n%b"
     # geometry [{width}]x{height}][+/-{x}+/-{y}]
